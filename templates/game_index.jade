@@ -1,0 +1,9 @@
+extends 'base.jade'
+block body
+	h2 Listado de Juegos
+	for game in games
+		name = game.name
+		id = game.id
+		a(href=url_for('game', gid=id))= name
+	a(href=url_for('new_game')) (+) Agregar
+endblock

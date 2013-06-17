@@ -1,0 +1,29 @@
+doctype 5
+html(lang='es')
+	head
+		title= 'TarreUSM' + title
+		link(href=url_for('static', filename='bootstrap/bootstrap.css'), rel='stylesheet', type='text/css')
+		meta(charset='utf-8')
+	body
+		#header.container-fluid
+		.navbar
+			.navbar-inner
+				a.brand TarreUSM
+				ul.nav
+					li: a(href=url_for('tournament')) Torneos
+					li: a(href='calendar') Calendario de Tarreos
+				ul.nav.pull-right
+					li.dropdown
+						a.dropdown-toggle(data-toggle='dropdown') Login
+							b.caret
+						ul.dropdown-menu
+							li: a(href='/login/alumnos.usm.cl') @alumnos.usm.cl
+							li: a(href='/login/sansano.usm.cl') @sansano.usm.cl
+		#body.container-fluid
+			.row-fluid
+				- block body
+				- endblock
+
+		//- here go dem javascripts
+		script(src='http://code.jquery.com/jquery-2.0.0.js', type='text/javascript')
+		script(src=url_for('static', filename='bootstrap/js/bootstrap.js'), type='text/javascript')

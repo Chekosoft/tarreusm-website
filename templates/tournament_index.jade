@@ -1,0 +1,9 @@
+-extends 'base.jade'
+-block body
+
+h2 Hai Guise
+
+for t in ts
+	a(href=url_for('tournament', tid=t.id)) #{t.name}
+
+-endblock
